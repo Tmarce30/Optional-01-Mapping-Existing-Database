@@ -5,6 +5,7 @@ end
 
 def love_tracks
   # TODO: return an array of Track which sings about Love
+  Track.where('name LIKE ?', '%love%')
 end
 
 def long_tracks(min_length)
