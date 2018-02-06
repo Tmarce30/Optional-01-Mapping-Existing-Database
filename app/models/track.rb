@@ -6,4 +6,8 @@ class Track < ActiveRecord::Base
   def seconds
     milliseconds / 1000
   end
+
+  def artist
+    album.artist
+  end
 end
