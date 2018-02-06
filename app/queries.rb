@@ -1,5 +1,6 @@
 def reversed_sorted_artists
   # TODO: return an array of Artist, in reversed alphabetical order
+  Artist.all.sort(name: :desc)
 end
 
 def love_tracks
