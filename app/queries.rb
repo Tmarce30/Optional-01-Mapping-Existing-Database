@@ -15,4 +15,10 @@ end
 
 def top_five_artists(genre_name)
   # TODO: return the 5 artists with the more tracks of genre `genre_name`
+  Artist.select('artists.*, COUNT(tracks.name) AS track_count')
+        .joins(albums: { tracks: :genre })
+        .where(genres: { name: genre_name })
+        .group('artists.name')
+        .order('track_count DESC')
+        .limit(5)
 end
